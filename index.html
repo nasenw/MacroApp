@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food/Drink Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div id="startContainer">
+      <h1 id="mainHeader">Food/Drink Tracker</h1>
+      <div id="timerSetContainer">
+        <div id="startButtonContainer">
+          <label id="dayOfWeekLabel">Start Time: </label>
+          <!-- <button id="previousDayButton">
+            <i class="fa-solid fa-caret-left"></i>
+          </button> -->
+          <button id="startButton">
+            <label id="dayStart">Click To Start</label>
+          </button>
+
+          <!-- <button id="nextDayOfWeekButton">
+            <i class="fa-solid fa-caret-right"></i>
+          </button> -->
+        </div>
+        <div id="endButtonContainer">
+          <label id="dayOfWeekLabel">End Time: </label>
+          <!-- <button id="previousDayButton">
+            <i class="fa-solid fa-caret-left"></i>
+          </button> -->
+          <button id="currentDayOfWeekButton">
+            <label id="dayEnd">Click To End Day</label>
+          </button>
+        </div>
+        <!-- <button id="nextDayOfWeekButton">
+          <i class="fa-solid fa-caret-right"></i>
+        </button> -->
+      </div>
+    </div>
+    <div id="modalButtonContainer">
+      <label id="addButtonLabel"><b>Track a Food or Drink Item:</label><br>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#myModal"
+      >
+        Add Item to Macro Counter
+      </button>
+
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">What did you consume?</h5>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <form id="userChoicesModalForm">
+                <div class="form-group">
+                  <label>Item Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="usersItemName"
+                    required = true
+                    placeholder="Item Name"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Calories Per Serving</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="userItemCalories"
+                    placeholder="0"
+                    required = true
+                  />
+                </div>
+
+                <div class="form-group" id="addToDiv">
+                  <label for="message">Servings</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="userItemServings"
+                    placeholder="1"
+                    required = true
+                  />
+                </div>
+
+                <!-- <div class="form-group">
+                  <label for="message" contenteditable="true">New Macro (click to edit)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="task"
+                    placeholder="Enter value"
+                  />
+                </div> -->
+
+
+
+                <label>Add Stat:</label>
+                <div class="form-group">
+                  <button type="button" id="addMacroButton" class="btn btn-primary">+</button>
+                </div>
+
+                
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button id="modalSubmit" type="button" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+    
+    <div id="itemGridContainer">
+      <!-- <div id="foodItem">
+        <h3 class="foodItemTitle">Food Item1</h3>
+        <h3>Calories</h3>
+        <button id="foodItemMacroButton"class="foodItemMacros"  value="yo" type="button">
+          <h3>Other Macros</h3>
+        </button>
+      </div>
+
+      <div id="foodItem">
+        <h3 class="foodItemTitle">Food Item2</h3>
+        <h3>Calories</h3>
+        <button id="foodItemMacroButton"class="foodItemMacros"  value="yo1"> 
+          <h3>Other Macros</h3>
+        </button>
+      </div>
+
+      <div id="foodItem">
+        <h3 class="foodItemTitle">Food Item3</h3>
+        <h3>Calories</h3>
+        <button id="foodItemMacroButton" class="foodItemMacros" value="yo">
+          <h3>Other Macros</h3>
+        </button>
+      </div> -->
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <script src="homepageJS.js"></script>
+</html>
